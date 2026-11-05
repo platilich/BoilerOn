@@ -1,0 +1,14 @@
+[Unit]
+Description=BoilerOn
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=root
+WorkingDirectory=/home/root/BoilerOn
+ExecStart=/home/root/BoilerOn/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
